@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div class="list"></div>
+    <script>
+        let list =document.querySelector('.list');
+            list.innerHTML='...Loading...';
+    /*
+        fetch(網址).then(function(response){
+            response 代表伺服器的回應
+        })
+    */
+    let src = 'https://jjusstiin.github.io/test/ToDo%20List.html'
+    fetch(src).then(function(response){
+        return response.text();//用字串方式取回資料
+    }).then(function(result){
+        console.log(result);
+    });
+    let testjson = 'https://jjusstiin.github.io/test/test.json'
+    fetch(testjson).then(function(response){
+        return response.json();//用字串方式取回資料
+    }).then(function(result){
+        list.innerHTML='';
+        let product;
+        for(let i=0;i<result.length;i++){
+            product=result[i];
+
+        }
+    });
+    
+    
+    
+    </script>
+</body>
+</html>
